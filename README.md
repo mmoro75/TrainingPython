@@ -5,5 +5,7 @@ Topc
 - GIT
 - Pyton
 - PyCharm IDE
+- Scripting
+- Flow Charts 
 - Frameworks  i.e Cucumber , Robot  
 - DevOPS 
