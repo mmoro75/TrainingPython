@@ -1,4 +1,4 @@
-The purpose of this repository is to provide Python training to Iryna to achieve the annual goals
+The purpose of this repository is to provide Python training to *****  to achieve the annual goals
 
 
 Topc 
