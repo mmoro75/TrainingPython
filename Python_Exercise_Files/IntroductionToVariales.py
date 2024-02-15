@@ -9,7 +9,7 @@
 # python already indentify what kind of variable you are declaring you do not need to specify in fact Python is called Dynamically typed language
 x=2 # variable x is an int
 y=4.5 # variable is a float
-z="name" # varibale is a string
+z="name" # variable is a string
 
 print(type(x))
 type(y)
