@@ -75,16 +75,16 @@ My_Name="marco"
 
 print(x)
 print(y)
-print(My_Name)
+print(MyName)
 
 """
 x=1,y=2.5,My_name="marco"
-print(x,y,My_Name)
+print(x,y,Myname)
 
 
 """
 
-print(x,y,My_Name)
-print("{} {} {}".format(y,x,My_Name)) # The format operator, % allows us to construct strings, replacing parts of the strings with the data stored in variables
-print(f"the value of x is: {x} the value of y is: {y} my name is: {My_Name}")  # lets' write this in new lines
+print(x,y,MyName)
+print("{} {} {}".format(y,MyName,x)) # The format operator, % allows us to construct strings, replacing parts of the strings with the data stored in variables
+print(f"the value of x is: {x} \nthe value of y is: {y} \nmy name is: {MyName}")  # lets' write this in new lines
 
