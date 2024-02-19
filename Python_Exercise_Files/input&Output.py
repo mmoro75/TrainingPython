@@ -1,5 +1,6 @@
 #################################   How to get values from external user ########################################
 
+#### The input() function takes input from the user and returns it.
 
 # input is always a string
 
