@@ -1,5 +1,7 @@
 ######################################### STRINGS ###########################
 
+
+
 """
 Strings in python is a sequence of characters ( any character in your keyboard numbers, letters, special char ( in python even space is included be aware)
 
