@@ -25,6 +25,14 @@ RIC="![VOD.L"
 
 ## if needed rememeber to use print(help(str) or visit the pyhton documentation website https://docs.python.org/3.10/library/index.html
 
+"""
+досліджуйте, вчіться, розважайтеся, насолоджуйтесь, захоплюйтесь і, найголовніше, якщо щось нелегко, 
+як здається, НЕ ПАНІКУЙТЕ, я тут, щоб допомогти!
+
+"""
+
+
+
 ####################################### INPUT OUTPUT  EXERCISE#######################
 
 # ask the user to provide a value for variable x in integer
