@@ -17,7 +17,7 @@ print(C)
 print(C.islower())
 print(C.isupper())
 #with boolean check is string is ending with er veryfy the result is TRUE
-print(A.endwith("er"))
+print(A.endswith("er"))
 # count how mant letters o are in string A and print on screen
 print(A.count("o"))
 # given the RIC
