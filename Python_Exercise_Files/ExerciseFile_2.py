@@ -1,7 +1,7 @@
 
-#### given the below list ####################
+### given the below list ####################
 
-My_Shopping["apple","avocados","eggs","rice","bread","sweets","tomatoes","salad","ice cream"]
+My_Shopping=["apple","avocados","eggs","rice","bread","sweets","tomatoes","salad","ice cream"]
 
 # create another list with only the last 3 items
 
@@ -17,11 +17,11 @@ My_Shopping["apple","avocados","eggs","rice","bread","sweets","tomatoes","salad"
 
 ############   given the below Dictionary ##########################################
 
-My_Items={"food":"bread","tool":"hammer","food":"rice","car":"ferrari","tool":"nail","car":"Lamborghini","food":"banana","tool":"scissiors","food":"orange"}
-
+My_Items={"food":"bread","tool":"hammer","main":"rice","sportCar":"ferrari","utensil":"nail","car":"Lamborghini","fruit":"banana","city":"London","color":"orange"}
 # print only key values type
 # print only values type
 # print all the items
+
 
 # copy My_Items dictionary into My_NewItems dictionary
 # pop out all the cars from My_NewItems
