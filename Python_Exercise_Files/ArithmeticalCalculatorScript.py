@@ -43,7 +43,7 @@ while True:
         break
 
 while True:
-    R = eval(input("Provide the operation: "))
+    R = input("Provide the operation: ")  # eval not needed when user enter a string ##
     if R not in ["+","-","*","/"]:
         print(f"Available operations are: +, -, *, /")
     elif R == "+":
