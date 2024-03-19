@@ -48,6 +48,8 @@ print(os.path.isdir(path))  # see if path is a directory result in boolean
 print(os.path.isfile(path)) # see if ptah is a file result in boolean
 print(os.path.islink(path)) # to check if it is a link or not result in boolean
 
+
+
 ###################################################### OS.System ##############################################
 #
 # with OS.System function you can execute operating system commands ( very useful )
@@ -70,7 +72,7 @@ else:
 
 
 
-########################################################## OS.WALK######################################
+########################################################## OS.WALK    ######################################
 #
 # the os.walk(path) function it is used to generate file and directory in a directory tree by walking
 # ( for example find a file it will find on given path and all subdirectory )
@@ -107,7 +109,7 @@ for root,dir,files in os.walk(path1):
 
 
 ########################## To get list of files in the given path #########################################
-
+import string
 
 for root, dir, files in os.walk(path1):
     if len(path1) != 0:  # to exclude empty paths if needed to get only internal data
@@ -122,3 +124,4 @@ for root,dir,files in os.walk(path1):
     for each_file in files:
         print("See list of files with root path included")
         print(os.path.join(root,each_file))  # now print root and each file associated by using joint function
+        print("*************************************************")

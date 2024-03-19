@@ -1,6 +1,6 @@
 #################################### SYS MODULE ####################################################
 
-# sys module is used to work with payton runtime environment - meaning if you want to interact with your python interpreter whislt is running
+# sys module is used to work with payton runtime environment - meaning if you want to interact with your python interpreter whilst is running
 # sys does not mean your system it means python runtime environment on your system
 # function in this module are used to manipulate different part of the python runtime environment
 
