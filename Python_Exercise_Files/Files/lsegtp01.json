@@ -1,0 +1,1442 @@
+
+
+{
+	"TradeEcho": 0,
+	"Channels": ["A","B","C","E","2","4"],
+	"ProviderId": 12477,
+	"WatchdogConfigFile": "/ThomsonReuters/Venues/LSEGTP/config/WatchDogEntityConfig.xml",
+	"ConfigFilesPath": "/ThomsonReuters/Config",
+	"InputBufferSize": 2048,
+	"InputBufferCount": 32768,
+	"MaxFIDValue": 65535,
+	"TimeTrackerUseQPC": 0,
+	"StartOfDayTime": "04:15",
+	"EndOfDayTime": "23:00",
+	"RolloverTime": "01:05",
+	"CacheRolloverTime": "05:55",
+	"ConnectTimesRIC": "LSE%FD01",
+	"HighActivityTimesRIC": "LSE%TRD01",
+	"CHE-TimeZoneForConfigTimes": "LSE%DST",
+	"ThrottlingBatchInterval": 50,
+	"ThrottlingBatchSize": 1000,
+	
+	
+	
+	"HiActTimeLimit": 65,
+	"LoActTimeLimit": 120,
+	"IntervalBetweenLatencyTrackedMessages": 1,
+	"MarketDomain": "MarketPrice",
+	
+	"ContextChanges": {
+			
+		"C1885": {
+			"Allowed To": [
+				2378,
+				1013
+			]
+		},
+		"C2378": {
+			"Allowed To": [
+				1885,
+				1013
+			]
+		},
+		"C1013": {
+			"Allowed To": [
+				1885,
+				2378
+			]
+		}
+ 
+	},
+ 
+	
+	
+	"ThreadSettings": {
+		
+			
+		
+			
+				"DispatchThread" : { "Affinity" : "2" },
+			
+		
+			
+				"ProcessingThread_1" : { "Affinity" : "3" },
+			
+		
+			
+				"ProcessingThread_2" : { "Affinity" : "4" },
+			
+		
+			
+				"ProcessingThread_3" : { "Affinity" : "5" },
+			
+		
+		
+		"NumberOfProcessingThreads": 3
+	},
+	
+	"FMSClient": {
+		"IP": "10.167.157.42",
+		"Port": 28000
+	},
+	
+	"Lookups": {
+		"Module": "/ThomsonReuters/FTE/lib/libLSEGTPLookup.so"
+	},
+	
+	"Transforms": {
+		"C1885": {
+			"OutputLabel": "2138",
+			"TransformContainer" : {
+                                "Module": "libTConfContainer.so",
+                                "UDMFilePath": "/ThomsonReuters/Config",
+                                "TransformConfig": "/ThomsonReuters/Venues/LSEGTP/tconf/C1885.tconf",
+                                "TransformConfigOptimized": "true",
+                                "TransformModule1": "libCoreTransforms.so",
+                                "TransformModule2": "libStandardTransforms.so",
+								"FunctionFile1": "/ThomsonReuters/FTE/logic/hlts",
+                                "VehicleObject_bts": {
+									"key": "bts_main",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts2": {
+									"key": "bts_offbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts3": {
+									"key": "bts_onbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts4": {
+									"key": "bts_pd",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								}								
+                        }
+
+		},
+		"C2378": {
+			"OutputLabel": "2138",
+			"TransformContainer" : {
+                                "Module": "libTConfContainer.so",
+                                "UDMFilePath": "/ThomsonReuters/Config",
+                                "TransformConfig": "/ThomsonReuters/Venues/LSEGTP/tconf/C2378.tconf",
+                                "TransformConfigOptimized": "true",
+                                "TransformModule1": "libCoreTransforms.so",
+                                "TransformModule2": "libStandardTransforms.so",
+								"FunctionFile1": "/ThomsonReuters/FTE/logic/hlts",
+                                "VehicleObject_bts": {
+									"key": "bts_main",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts2": {
+									"key": "bts_offbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts3": {
+									"key": "bts_onbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts4": {
+									"key": "bts_pd",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								}	
+                        }
+
+		},
+		"C1013": {
+			"OutputLabel": "2138",
+			"TransformContainer" : {
+                                "Module": "libTConfContainer.so",
+                                "UDMFilePath": "/ThomsonReuters/Config",
+                                "TransformConfig": "/ThomsonReuters/Venues/LSEGTP/tconf/C1013.tconf",
+                                "TransformConfigOptimized": "true",
+                                "TransformModule1": "libCoreTransforms.so",
+                                "TransformModule2": "libStandardTransforms.so",
+								"FunctionFile1": "/ThomsonReuters/FTE/logic/hlts",
+                                "VehicleObject_bts": {
+									"key": "bts_main",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts2": {
+									"key": "bts_offbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts3": {
+									"key": "bts_onbk",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								},
+								"VehicleObject_bts4": {
+									"key": "bts_pd",
+									"module": "/data/FTE/lib/libStandardTransforms.so",
+									"factory": "create_unbound_basic_trade_stack"
+								}
+                        }
+
+		},
+		"C1133": {
+			"OutputLabel": "2138",
+			"TransformContainer" : {
+                                "Module": "libTConfContainer.so",
+                                "UDMFilePath": "/ThomsonReuters/Config",
+                                "TransformConfig": "/ThomsonReuters/Venues/LSEGTP/tconf/toba.tconf",
+                                "TransformConfigOptimized": "true",
+                                "TransformModule1": "libCoreTransforms.so",
+                                "TransformModule2": "libStandardTransforms.so"
+                        }
+
+		}
+ 
+	},	
+	
+	"FMS": {
+		"Enabled": 1,
+		"EnableInboundJournaling": 0,
+		"EnableOutboundJournaling": 0,
+		"ReorgTimeoutInSeconds": 1200,
+		"ReorgTimeoutMode": "None",
+		"ResendFM": 1,
+		"SendRefreshForFullReorg": 0,
+		"Services": ["GTP_LSE"],
+		"GTP_LSE": {
+		
+			"Domain": ["MARKET_PRICE"],
+
+		
+		
+			"FilterString": "(CHANL_ID=\"A\" OR CHANL_ID=\"B\" OR CHANL_ID=\"C\" OR CHANL_ID=\"E\" OR CHANL_ID=\"2\" OR CHANL_ID=\"4\" OR sISSUTYPE=\"OTFC_TPL\") AND (CONTEXT_ID=1885 OR CONTEXT_ID=2378 OR CONTEXT_ID=1013 OR CONTEXT_ID=1133)",
+
+		
+			"NDAFilterValue": 1
+		}
+ 
+	},
+	
+	"Persistence": {
+		"DDS": {
+			"MutexNameForStaggering": "LSEGTP_Persistence_Mutex",
+			"NumberOfDailyBackupsToKeep": 3
+		}
+	},
+	
+	
+	"CommandControl": {
+   		"Enabled": 1
+	},
+	
+	"DownstreamRecovery": {
+		"DDS": {
+			"Enabled": 1
+		}
+	},
+	
+	"PeerRecovery": {
+		"DDS": {
+			"DisablePeerRecovery": 0,
+			"ServerBindNic": "10.167.157.42",
+			"ServerListenPort": 7601
+		}
+	},
+	
+	"Mangling": {
+		"ManglingUpdaterBatchSize": 100,
+		"ManglingUpdaterBatchDelayInMilliseconds": 10
+	},
+	
+	"Publishing": {
+		"DDS": {
+			"ProviderName": "LSEGTP01",
+			"ProviderInstance": "D",
+			"SyncSenderPeriodType": 2,
+			"SyncSenderPeriodByTime": 100,
+			"SyncSenderPeriodByFrame": 100,
+			"Multicast0":
+			{
+				"LabelID": 2138,
+				"MaxMessageLength": 11696,
+            	"MaxFramePayloadSize": 1462,
+            	"FrameBufferPoolSize": 1024,
+            	"FlushBufferThreshold": 1316
+			}
+		}
+	},			
+"Staging": {
+		"Threads": {
+			"Thread_InputsA" : { "Type": "Asio"
+			 
+			, "Affinity": "1" 
+			
+			},
+			"Thread_InputsB" : { "Type": "Asio"
+			 
+			, "Affinity": "1" 
+			
+			},
+            "Thread_InputsR" : {},
+            
+			
+			"Thread_Decoder_A" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_A_M" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_B" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_B_M" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_C" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_C_M" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_E" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_E_M" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_2" : { "Type": "Asio"},
+			
+			
+			"Thread_Decoder_4" : { "Type": "Asio"},
+			
+			"Thread_FTP" : {}
+		},
+		
+		"Stages": {
+            "Line_FTP" : { "Thread" : "Thread_FTP", "Destination": "Decoder_FTP" },
+            "Decoder_FTP" : {"Thread" : "Thread_FTP", "Destination": "Dispatcher" },
+			
+			
+			
+			"Line_Delta-A_A" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_A" },
+			"Line_Delta-B_A" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_A" },
+			"Line_Replay_A"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_A" },
+			
+			"Line_Snapshot_A": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_A" },
+            "Line_RefRequest_A": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_A" }, 
+            
+			
+			"Decoder_Delta_A": { "Thread": "Thread_Decoder_A", "Destination": "TheRecoveryManager_A" },
+			
+			"Decoder_Snapshot_A": { "Thread": "Thread_Decoder_A", "Destination": "TheRecoveryManager_A" },
+			
+			"TheRecoveryManager_A": { "Thread" : "Thread_Decoder_A", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_A_M" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_A_M" },
+			"Line_Delta-B_A_M" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_A_M" },
+			"Line_Replay_A_M"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_A_M" },
+			
+			"Decoder_Delta_A_M": { "Thread": "Thread_Decoder_A_M", "Destination": "TheRecoveryManager_A_M" },
+			
+			"TheRecoveryManager_A_M": { "Thread" : "Thread_Decoder_A_M", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_B" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_B" },
+			"Line_Delta-B_B" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_B" },
+			"Line_Replay_B"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_B" },
+			
+			"Line_Snapshot_B": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_B" },
+            "Line_RefRequest_B": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_B" }, 
+            
+			
+			"Decoder_Delta_B": { "Thread": "Thread_Decoder_B", "Destination": "TheRecoveryManager_B" },
+			
+			"Decoder_Snapshot_B": { "Thread": "Thread_Decoder_B", "Destination": "TheRecoveryManager_B" },
+			
+			"TheRecoveryManager_B": { "Thread" : "Thread_Decoder_B", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_B_M" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_B_M" },
+			"Line_Delta-B_B_M" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_B_M" },
+			"Line_Replay_B_M"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_B_M" },
+			
+			"Decoder_Delta_B_M": { "Thread": "Thread_Decoder_B_M", "Destination": "TheRecoveryManager_B_M" },
+			
+			"TheRecoveryManager_B_M": { "Thread" : "Thread_Decoder_B_M", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_C" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_C" },
+			"Line_Delta-B_C" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_C" },
+			"Line_Replay_C"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_C" },
+			
+			"Line_Snapshot_C": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_C" },
+            "Line_RefRequest_C": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_C" }, 
+            
+			
+			"Decoder_Delta_C": { "Thread": "Thread_Decoder_C", "Destination": "TheRecoveryManager_C" },
+			
+			"Decoder_Snapshot_C": { "Thread": "Thread_Decoder_C", "Destination": "TheRecoveryManager_C" },
+			
+			"TheRecoveryManager_C": { "Thread" : "Thread_Decoder_C", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_C_M" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_C_M" },
+			"Line_Delta-B_C_M" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_C_M" },
+			"Line_Replay_C_M"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_C_M" },
+			
+			"Decoder_Delta_C_M": { "Thread": "Thread_Decoder_C_M", "Destination": "TheRecoveryManager_C_M" },
+			
+			"TheRecoveryManager_C_M": { "Thread" : "Thread_Decoder_C_M", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_E" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_E" },
+			"Line_Delta-B_E" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_E" },
+			"Line_Replay_E"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_E" },
+			
+			"Line_Snapshot_E": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_E" },
+            "Line_RefRequest_E": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_E" }, 
+            
+			
+			"Decoder_Delta_E": { "Thread": "Thread_Decoder_E", "Destination": "TheRecoveryManager_E" },
+			
+			"Decoder_Snapshot_E": { "Thread": "Thread_Decoder_E", "Destination": "TheRecoveryManager_E" },
+			
+			"TheRecoveryManager_E": { "Thread" : "Thread_Decoder_E", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_E_M" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_E_M" },
+			"Line_Delta-B_E_M" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_E_M" },
+			"Line_Replay_E_M"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_E_M" },
+			
+			"Decoder_Delta_E_M": { "Thread": "Thread_Decoder_E_M", "Destination": "TheRecoveryManager_E_M" },
+			
+			"TheRecoveryManager_E_M": { "Thread" : "Thread_Decoder_E_M", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_2" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_2" },
+			"Line_Delta-B_2" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_2" },
+			"Line_Replay_2"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_2" },
+			
+			"Line_Snapshot_2": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_2" },
+
+			
+			"Decoder_Delta_2": { "Thread": "Thread_Decoder_2", "Destination": "TheRecoveryManager_2" },
+			
+			"Decoder_Snapshot_2": { "Thread": "Thread_Decoder_2", "Destination": "TheRecoveryManager_2" },
+			
+			"TheRecoveryManager_2": { "Thread" : "Thread_Decoder_2", "Destination" : "Dispatcher" } , 
+			
+			
+			"Line_Delta-A_4" : { "Thread": "Thread_InputsA", "Destination": "Decoder_Delta_4" },
+			"Line_Delta-B_4" : { "Thread": "Thread_InputsB", "Destination": "Decoder_Delta_4" },
+			"Line_Replay_4"  : { "Thread": "Thread_InputsR", "Destination": "Decoder_Delta_4" },
+			
+			"Line_Snapshot_4": { "Thread": "Thread_InputsR", "Destination": "Decoder_Snapshot_4" },
+
+			
+			"Decoder_Delta_4": { "Thread": "Thread_Decoder_4", "Destination": "TheRecoveryManager_4" },
+			
+			"Decoder_Snapshot_4": { "Thread": "Thread_Decoder_4", "Destination": "TheRecoveryManager_4" },
+			
+			"TheRecoveryManager_4": { "Thread" : "Thread_Decoder_4", "Destination" : "Dispatcher" }  
+			
+		}
+	},
+	
+	"Decoders" : {
+		"Decoder_FTP": { "Module": "libLSEGTPFTPDecoder.so", "messageStreamId": 0 },
+	
+		
+		
+		
+		
+		
+		"Decoder_Snapshot_A": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 2 },
+		
+		"Decoder_Delta_A": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 1 },
+       	
+		
+        
+		
+		
+		"Decoder_Delta_A_M": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 3 },
+       	
+		
+        
+		
+		
+		"Decoder_Snapshot_B": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 6 },
+		
+		"Decoder_Delta_B": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 5 },
+       	
+		
+        
+		
+		
+		"Decoder_Delta_B_M": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 7 },
+       	
+		
+        
+		
+		
+		"Decoder_Snapshot_C": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 10 },
+		
+		"Decoder_Delta_C": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 9 },
+       	
+		
+        
+		
+		
+		"Decoder_Delta_C_M": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 11 },
+       	
+		
+        
+		
+		
+		"Decoder_Snapshot_E": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 14 },
+		
+		"Decoder_Delta_E": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 13 },
+       	
+		
+        
+		
+		
+		"Decoder_Delta_E_M": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 15 },
+       	
+		
+        
+		
+		
+		"Decoder_Snapshot_2": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 18 },
+		
+		"Decoder_Delta_2": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 17 },
+       	
+		
+        
+		
+		
+		"Decoder_Snapshot_4": { "Module": "libLSEGTPDecoder.so", "messageStreamId": 20 },
+		
+		"Decoder_Delta_4": { 
+			"Module": "libLSEGTPDecoder.so",
+			 
+			"messageStreamId": 19 }
+       	
+		
+        
+	},
+	
+	"Inputs": {
+
+		"SumPaired"                   : 0,
+		"ReuseAddress"                : 1,
+		"ConnectTimesIdentifier"      : "LSE%FD01",
+		"HighActivityTimesIdentifier" : "LSE%TRD01",
+		"ReceiveBufferSize": 8388608,
+		
+		"Channel_FTP": {
+        	"Line_FTP": {
+            	"Type" : "api",
+               	"Role" : "meta",
+                "APIHandler" : "libLSEGTPAPIHandler.so",
+                "Endpoints"  : ["LSE_FTP_refdata:lsepublic82@194.169.6.4:22","LSE_FTP_refdata:lsepublic82@194.169.7.4:22"],
+                "FTP_Dir" : "/data/ftp_downloads/LSEGTP01",
+                "PollingIntervalInSeconds" : 60,
+                "MonitorInactivity" : false
+            }
+        },
+		
+		
+		
+		
+		
+		
+		
+		
+		"Channel_Delta_A": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_A": { "Endpoint": "224.4.18.16:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_A", "On": false },
+			"Line_Delta-B_A": { "Endpoint": "224.4.19.16:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_A" , "On": false }
+		},
+		"Channel_Replay_A": {
+			"Line_Replay_A" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31016",
+					"194.169.6.133:31016",
+					"194.169.7.5:31016",
+					"194.169.7.133:31016"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "A",
+				 "MessageStream" : 1,
+                 "username": "LREUHA01"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_A": {
+            "Line_Snapshot_A" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.6:31216",
+					"194.169.6.134:31216",
+					"194.169.7.6:31216",
+					"194.169.7.134:31216"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0","1","3","4"],
+                 "MarketDataGroup" : "A",
+                 "MessageStream" : 1,
+                 "username": "LREUHA01"
+			}
+        }
+        ,
+        "Channel_RefRequest_A": {
+            "Line_RefRequest_A" : {
+                "Type" : "tcp",
+                "Role" : "delta",
+				"Endpoints" : [
+					"194.169.6.6:31216",
+					"194.169.6.134:31216",
+					"194.169.7.6:31216",
+					"194.169.7.134:31216"
+				],
+				"On" : false,
+                "AutoConnect" : false,
+                "AutoDisconnect" : false,
+				"MonitorInactivity" : false,
+                "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				"ConnectTimesIdentifier"      : "LSE%FD02",
+				"RecoveryTypes" : ["0"],
+                "MarketDataGroup" : "A",
+                "MessageStream" : 1,
+                "username": "LREUHA01"
+           	}
+		}
+		
+		
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_A_M": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_A_M": { "Endpoint": "224.4.18.32:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_A_M", "On": false },
+			"Line_Delta-B_A_M": { "Endpoint": "224.4.19.32:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_A_M" , "On": false }
+		},
+		"Channel_Replay_A_M": {
+			"Line_Replay_A_M" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31032",
+					"194.169.6.133:31032",
+					"194.169.7.5:31032",
+					"194.169.7.133:31032"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "A",
+				 "MessageStream" : 3,
+                 "username": ""
+			}
+        }
+        
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_B": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_B": { "Endpoint": "224.4.18.17:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_B", "On": false },
+			"Line_Delta-B_B": { "Endpoint": "224.4.19.17:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_B" , "On": false }
+		},
+		"Channel_Replay_B": {
+			"Line_Replay_B" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31017",
+					"194.169.6.133:31017",
+					"194.169.7.5:31017",
+					"194.169.7.133:31017"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "B",
+				 "MessageStream" : 5,
+                 "username": "LREUHB01"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_B": {
+            "Line_Snapshot_B" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.6:31217",
+					"194.169.6.134:31217",
+					"194.169.7.6:31217",
+					"194.169.7.134:31217"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0","1","3","4"],
+                 "MarketDataGroup" : "B",
+                 "MessageStream" : 5,
+                 "username": "LREUHB01"
+			}
+        }
+        ,
+        "Channel_RefRequest_B": {
+            "Line_RefRequest_B" : {
+                "Type" : "tcp",
+                "Role" : "delta",
+				"Endpoints" : [
+					"194.169.6.6:31217",
+					"194.169.6.134:31217",
+					"194.169.7.6:31217",
+					"194.169.7.134:31217"
+				],
+				"On" : false,
+                "AutoConnect" : false,
+                "AutoDisconnect" : false,
+				"MonitorInactivity" : false,
+                "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				"ConnectTimesIdentifier"      : "LSE%FD02",
+				"RecoveryTypes" : ["0"],
+                "MarketDataGroup" : "B",
+                "MessageStream" : 5,
+                "username": "LREUHB01"
+           	}
+		}
+		
+		
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_B_M": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_B_M": { "Endpoint": "224.4.18.33:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_B_M", "On": false },
+			"Line_Delta-B_B_M": { "Endpoint": "224.4.19.33:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_B_M" , "On": false }
+		},
+		"Channel_Replay_B_M": {
+			"Line_Replay_B_M" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31033",
+					"194.169.6.133:31033",
+					"194.169.7.5:31033",
+					"194.169.7.133:31033"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "B",
+				 "MessageStream" : 7,
+                 "username": ""
+			}
+        }
+        
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_C": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_C": { "Endpoint": "224.4.18.18:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_C", "On": false },
+			"Line_Delta-B_C": { "Endpoint": "224.4.19.18:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_C" , "On": false }
+		},
+		"Channel_Replay_C": {
+			"Line_Replay_C" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31018",
+					"194.169.6.133:31018",
+					"194.169.7.5:31018",
+					"194.169.7.133:31018"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "C",
+				 "MessageStream" : 9,
+                 "username": "LREUHC01"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_C": {
+            "Line_Snapshot_C" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.6:31218",
+					"194.169.6.134:31218",
+					"194.169.7.6:31218",
+					"194.169.7.134:31218"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0","1","3","4"],
+                 "MarketDataGroup" : "C",
+                 "MessageStream" : 9,
+                 "username": "LREUHC01"
+			}
+        }
+        ,
+        "Channel_RefRequest_C": {
+            "Line_RefRequest_C" : {
+                "Type" : "tcp",
+                "Role" : "delta",
+				"Endpoints" : [
+					"194.169.6.6:31218",
+					"194.169.6.134:31218",
+					"194.169.7.6:31218",
+					"194.169.7.134:31218"
+				],
+				"On" : false,
+                "AutoConnect" : false,
+                "AutoDisconnect" : false,
+				"MonitorInactivity" : false,
+                "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				"ConnectTimesIdentifier"      : "LSE%FD02",
+				"RecoveryTypes" : ["0"],
+                "MarketDataGroup" : "C",
+                "MessageStream" : 9,
+                "username": "LREUHC01"
+           	}
+		}
+		
+		
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_C_M": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_C_M": { "Endpoint": "224.4.18.34:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_C_M", "On": false },
+			"Line_Delta-B_C_M": { "Endpoint": "224.4.19.34:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_C_M" , "On": false }
+		},
+		"Channel_Replay_C_M": {
+			"Line_Replay_C_M" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31034",
+					"194.169.6.133:31034",
+					"194.169.7.5:31034",
+					"194.169.7.133:31034"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "C",
+				 "MessageStream" : 11,
+                 "username": ""
+			}
+        }
+        
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_E": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_E": { "Endpoint": "224.4.18.20:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_E", "On": false },
+			"Line_Delta-B_E": { "Endpoint": "224.4.19.20:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_E" , "On": false }
+		},
+		"Channel_Replay_E": {
+			"Line_Replay_E" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31020",
+					"194.169.6.133:31020",
+					"194.169.7.5:31020",
+					"194.169.7.133:31020"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "E",
+				 "MessageStream" : 13,
+                 "username": "LREUHE01"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_E": {
+            "Line_Snapshot_E" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.6:31220",
+					"194.169.6.134:31220",
+					"194.169.7.6:31220",
+					"194.169.7.134:31220"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0","1","3","4"],
+                 "MarketDataGroup" : "E",
+                 "MessageStream" : 13,
+                 "username": "LREUHE01"
+			}
+        }
+        ,
+        "Channel_RefRequest_E": {
+            "Line_RefRequest_E" : {
+                "Type" : "tcp",
+                "Role" : "delta",
+				"Endpoints" : [
+					"194.169.6.6:31220",
+					"194.169.6.134:31220",
+					"194.169.7.6:31220",
+					"194.169.7.134:31220"
+				],
+				"On" : false,
+                "AutoConnect" : false,
+                "AutoDisconnect" : false,
+				"MonitorInactivity" : false,
+                "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				"ConnectTimesIdentifier"      : "LSE%FD02",
+				"RecoveryTypes" : ["0"],
+                "MarketDataGroup" : "E",
+                "MessageStream" : 13,
+                "username": "LREUHE01"
+           	}
+		}
+		
+		
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_E_M": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD02",
+					"HighActivityTimesIdentifier" : "LSE%TRD08",
+			"Line_Delta-A_E_M": { "Endpoint": "224.4.18.36:31000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_E_M", "On": false },
+			"Line_Delta-B_E_M": { "Endpoint": "224.4.19.36:31000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_E_M" , "On": false }
+		},
+		"Channel_Replay_E_M": {
+			"Line_Replay_E_M" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.5:31036",
+					"194.169.6.133:31036",
+					"194.169.7.5:31036",
+					"194.169.7.133:31036"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "E",
+				 "MessageStream" : 15,
+                 "username": ""
+			}
+        }
+        
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_2": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD01",
+					"HighActivityTimesIdentifier" : "LSE%TRD01",
+			"Line_Delta-A_2": { "Endpoint": "224.4.18.128:35000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_2", "On": false },
+			"Line_Delta-B_2": { "Endpoint": "224.4.19.128:35000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_2" , "On": false }
+		},
+		"Channel_Replay_2": {
+			"Line_Replay_2" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.21:35128",
+					"194.169.6.149:35128",
+					"194.169.7.21:35128",
+					"194.169.7.149:35128"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "2",
+				 "MessageStream" : 17,
+                 "username": "TEPREU95"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_2": {
+            "Line_Snapshot_2" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.22:35328",
+					"194.169.6.150:35328",
+					"194.169.7.22:35328",
+					"194.169.7.150:35328"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0"],
+                 "MarketDataGroup" : "2",
+                 "MessageStream" : 17,
+                 "username": "TEPREU95"
+			}
+        }
+
+		
+		 , 
+		
+		
+		
+		
+		
+		"Channel_Delta_4": {
+			"HeartbeatOrigin"             : "blank",
+			"HeartbeatType"               : "idle",
+			"Type": "UDP-Multicast",
+			"HeartbeatDescription" : "lsegtp Heartbeat",
+			"HeartbeatId": 3,
+			"HeartbeatInterval": 30,
+			"PrimaryLine": 1,
+			"MonitorInactivity": 1,
+					"ConnectTimesIdentifier" : "LSE%FD01",
+					"HighActivityTimesIdentifier" : "LSE%TRD01",
+			"Line_Delta-A_4": { "Endpoint": "224.4.18.129:35000",  "NIC": "10.22.3.151", "PairedWith": "Line_Delta-B_4", "On": false },
+			"Line_Delta-B_4": { "Endpoint": "224.4.19.129:35000", "NIC": "10.22.3.183", "PairedWith": "Line_Delta-A_4" , "On": false }
+		},
+		"Channel_Replay_4": {
+			"Line_Replay_4" : {
+				 "Type" : "tcp",
+                 "Role" : "retrans",
+                 "Endpoints" : [
+					"194.169.6.21:35129",
+					"194.169.6.149:35129",
+					"194.169.7.21:35129",
+					"194.169.7.149:35129"
+				],
+                 "On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+				 "MarketDataGroup" : "4",
+				 "MessageStream" : 19,
+                 "username": "TEPREU96"
+			}
+        }
+        
+        ,
+        "Channel_Snapshot_4": {
+            "Line_Snapshot_4" : {
+                 "Type" : "tcp",
+                 "Role" : "refresh",
+                 "Endpoints" : [
+					"194.169.6.22:35329",
+					"194.169.6.150:35329",
+					"194.169.7.22:35329",
+					"194.169.7.150:35329"
+				],
+				"On" : false,
+                 "AutoConnect" : false,
+                 "AutoDisconnect" : false,
+				 "MonitorInactivity" : false,
+                 "LineInterface" : "libLSEGTPRecoveryLineInterface.so",
+                 "PacketSegmenter" : "libLSEGTPPacketSegmenter.so",
+						"RecoveryTypes" : ["0"],
+                 "MarketDataGroup" : "4",
+                 "MessageStream" : 19,
+                 "username": "TEPREU96"
+			}
+        }
+
+		
+		  
+		
+		
+		
+		
+	},
+
+	"Recovery" : {
+		
+		
+   		"TheRecoveryManager_A" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_A_M" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_B" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_B_M" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_C" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_C_M" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_E" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_E_M" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_2" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		} , 
+   		
+		
+   		"TheRecoveryManager_4" : {
+      			"Arbiter"                            : "sequence",
+      			"TransientGapMaxSize"                : 500,
+				"TransientGapMaxGapSize"                : 500,  
+      			"TransientGapMaxMessagesAfterGap"    : 10,
+      			"TransientGapExpirationMilliseconds" : 250,
+				"TransientGapMaxGapDelay"            : 5000,
+				"TransientGapTimeoutMilliseconds"    : 250,
+				"GapRecoveryTimeoutMilliseconds"     : 5000,
+      			"FeedRecoveryMaxGapSize"             : 100,
+      			"FeedRecoveryMaxGapCount"            : 10,
+      			"FeedRecoveryRetryLimit"             : 3,
+      			"FeedRecoveryTimeoutMilliseconds"    : 30000,
+                "InitialSequenceNumber"              : 1
+   		}  
+   		
+	},
+
+    "MessageJournaling":{
+                "Enabled": false,
+                "FileName": "lsegtp01.mjl",
+                "TransactionsPerJournal": 10000
+    }
+
+}		
+	
+		
+		
+		
+			
