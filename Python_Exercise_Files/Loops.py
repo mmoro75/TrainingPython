@@ -38,10 +38,10 @@ for fr,sd in tu_list:
 
 #this scenario is very important when working with disctionary
 
-my_dic={"0:1","2:3","4:m"}
+my_dic={0:1,2:3,4:"m"}
 
 for each_item in my_dic:
     print(each_item)  # in this scenrio with a single variable you are going to get only key values ofyour dictionary
 
-for key,value in my_dic:
+for key,value in my_dic.items():
     print(key,value)  # with 2 variables you can get key and value in your dictionary ( or print them separatley)
