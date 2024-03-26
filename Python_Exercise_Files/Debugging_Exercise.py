@@ -12,11 +12,11 @@
 prompt=input("Please enter your string: ")
 action=input("how would you like to display your string : upper/lower or title format?")
 
-if action==upper:
+if action=="upper":
     print(action.upper())
 elif action=="lower":
     print(action.lower())
-elif action=="title"
+elif action=="title":
     print(action.title())
 else:
     print("please enter a valid action upper/lower or title")
@@ -26,15 +26,11 @@ else:
 
 # there are 3 mistakes here pay attention to varible type , variables not declared that are not supposed to be there and print formatting
 
-a=input("enter your number you want to check into your list: ")
+a=eval(input("enter your number you want to check into your list: "))
 
 if a not in [1,2,3,4,5,6,7]:
-  print("provided number {a} is not included into the list")
-elif b == 1:
-  print(f"{a} is into your list")
-elif b == 2:
-  print(f"{a} is into your list")
-elif b == 3:
+  print(f"provided number {a} is not included into the list")
+elif a in [1,2,3,4,5,6,7]:
   print(f"{a} is into your list")
 
 
@@ -42,8 +38,8 @@ elif b == 3:
 
 # there are 3 errors in the scrip make sure the print output is what you want , the list is declared properly and the loop syntax is correct
 
-MyList[1,2,4,5,6,7,8,9,10]
+MyList=[1,2,4,5,6,7,8,9,10]
 # syntax of for loop = "for" determine the type of loop, "n" is a variable that stores the value for the given main Variable for each iteration, in " variable you want to iterate"
 for n in MyList:
-    print(MyList)
+    print(f"{n} is in {MyList}")
 
