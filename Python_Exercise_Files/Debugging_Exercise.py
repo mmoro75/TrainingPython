@@ -13,11 +13,11 @@ prompt=input("Please enter your string: ")
 action=input("how would you like to display your string : upper/lower or title format?")
 
 if action=="upper":
-    print(action.upper())
+    print(prompt.upper())
 elif action=="lower":
-    print(action.lower())
+    print(prompt.lower())
 elif action=="title":
-    print(action.title())
+    print(prompt.title())
 else:
     print("please enter a valid action upper/lower or title")
 
