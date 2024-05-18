@@ -1,6 +1,10 @@
 ######################################### STRINGS ###########################
 
+<<<<<<< HEAD
 
+=======
+############################## TEST ########################
+>>>>>>> c0c879b762101945ee4b88e0ba7a6ad01c0fed11
 
 """
 Strings in python is a sequence of characters ( any character in your keyboard numbers, letters, special char ( in python even space is included be aware)
