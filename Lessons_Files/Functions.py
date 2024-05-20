@@ -173,7 +173,7 @@ key_val(a=1,b="marco",user="root") # you need to pass the arguments in order for
 
 # first of all import the functions defined in ScriptFunctions to make them available to be called
 
-import ScriptFunctions
+import ScriptsFunctions
 
 def calculator(a,b):
     result=a+b
@@ -184,13 +184,13 @@ a=5
 b=7
 
 calculator(a,b)
-ScriptFunctions.calculator(a,b)
+ScriptsFunctions.calculator(a,b)
 
 """
 #### modified including main function and if ---name--- ########################
 ### to be used in your Live_testing file###########################
 
-import ScriptFunctions
+import ScriptsFunctions
 
 def calculator(a,b):
     result=a+b
