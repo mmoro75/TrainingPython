@@ -32,7 +32,7 @@ print(f"your header is\n: {list(content)[0]}") # it will print index 0 = first r
 #print(next(content)) # you could use the default operation next it will print the first line as initially the cursor is at first position in the file
 
 # with the function next you also send cursor to ext line, and then you can print the remaining of csv rows
-#print("the number of rows in the file are:" len(list(content))) #to kow how many lines are in the file just print length of the list of content variable that sotres your fi
+#print("the number of rows in the file are:", len(list(content))) #to kow how many lines are in the file just print length of the list of content variable that sotres your fi
 #header=next(content)
 
 for each in content:
