@@ -22,7 +22,7 @@ we can connect Linux/Windows  <-> Windows/Linux <-> Windows/windows <-> Lunix/Li
 
 ssh=paramiko.SSHClient() # create ssh client
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # to authenticate automatically without asking yes or no permission when you connect to new server
-ssh.connect(hostname="ipaddress/hostname",username="root",password="Reuters1",port=22)  # connect with username and password
+ssh.connect(hostname="ipaddress/hostname",username="root",password="",port=22)  # connect with username and password
 # now to run commands we use the blow syntax in order to have variable for= stdout=output, stderr=error and stdin=for additional input
 stdin, stdout, stderr = ssh.exec_command("your_command")  # exec command will execute the command
 """
@@ -43,7 +43,7 @@ ssh.close() # close connection
 
 ssh=paramiko.SSHClient() # create ssh client
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname="ipaddress/hostname",username="root",password="Reuters1",port=22,)
+ssh.connect(hostname="ipaddress/hostname",username="root",password="",port=22,)
 stdin, stdout, stderr = ssh.exec_command("your_command")
 
 print("the output is: ", stdout.read())  # the variable are files, so you need read to see the content
@@ -55,7 +55,7 @@ ssh.close() # close connection
 
 ssh=paramiko.SSHClient() # create ssh client
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname="ipaddress/hostname",username="root",password="Reuters1",port=22)
+ssh.connect(hostname="ipaddress/hostname",username="root",password="",port=22)
 
 sftp_client=ssh.open_sftp() # open sftp connection to deal with files
 sftp_client.get("path/filename","destination_Path/filename") # to download the file
