@@ -49,7 +49,13 @@ def calculator():
 calculator()
 
 keepon=input("do you want to perform another operation? Y/N?:")
-if keepon == "Y":
+while keepon == "Y":
     calculator()
-else:
-    print("thanks, bye")
+    keepon = input("do you want to perform another operation? Y/N?:").upper()
+print("thanks, bye")
+
+"""
+# for an infinite loop without asking the user
+while True:
+    calculator()
+"""
