@@ -27,8 +27,8 @@ ssh.connect(hostname="ipaddress/hostname",username="root",password="",port=22)  
 stdin, stdout, stderr = ssh.exec_command("your_command")  # exec command will execute the command
 """
 stderr == contains error message if command fails 
-stdout == contains command output message if command is succesfulls
-stdin == this variable is needed only if an additional imput has to be provided to remote server 
+stdout == contains command output message if command is successful
+stdin == this variable is needed only if an additional input has to be provided to remote server 
 """
 
 print("the output is: ", stdout.read())  # the variable are files, so you need read to see the content by using read ( or readline/readlines functions)
