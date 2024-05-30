@@ -2,7 +2,8 @@
 This script allows the user to download the PMAT file from a desired venue and check if the given RIC is persisted
 """
 import paramiko
-
+from paramiko.ssh_exception import AuthenticationException
+import socket
 
 def main():
     hostname=input("provide server Ip: ")
@@ -35,7 +36,7 @@ def download_Persist(hostname,username,password,file_path,persist_file):
 
         ssh=paramiko.SSHClient() # create ssh client
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(hostname=hostname,username=username,password=password,port=22,)
+        ssh.connect(hostname=hostname,username=username,password=password,port=22)
 
         print("I am connected")
 
