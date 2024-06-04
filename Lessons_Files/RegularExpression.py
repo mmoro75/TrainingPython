@@ -181,7 +181,7 @@ my_patt_ob=re.compile(patt9) # I can compile my pattern into re module and creat
 print(my_patt_ob) # my pattern is included in the objet
 print(my_patt_ob.findall(sample_text)) # now I can perform all the re operation using my object just passing the string
 print(my_patt_ob.split(sample_text))
-print(my_patt_ob.findall(sample_text,flags=re.I)) # it will also support flags
+
 
 # whenever you are using same pattern several time in your code try to use compile ##
 
