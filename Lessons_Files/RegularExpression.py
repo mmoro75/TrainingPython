@@ -2,7 +2,7 @@
 
 '''
 --regEx or regular expression is a procedure to look for a specific pattern in a given text
---pattern is a sequence of charters wo ho represent multiple strings
+--pattern is a sequence of charters that represent multiple strings
     examples
        "i[st]" -----> in regular expression: is, it
        "python[23]' -----> in regular expression: Python2, python3
@@ -11,7 +11,7 @@
        string.split("is")
        string.split("it")
 
-       what is I want to split both at the same time?
+       what if I want to split both at the same time?
 
        import re
        re.split("i[st]",string)
@@ -184,4 +184,7 @@ print(my_patt_ob.split(sample_text))
 
 
 # whenever you are using same pattern several time in your code try to use compile ##
+
+     ### See all available options for RE at ################
+#### https://www.debuggex.com/cheatsheet/regex/python ######
 
