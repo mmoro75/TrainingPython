@@ -3,7 +3,7 @@
 # to get version installed - most of linux operating system already have python installed by default
 # python --version
 
-## if for some reason you required a new vesrion of python do not disturb your default version os yum command depends on it
+## if for some reason you required a new version of python do not disturb your default version os yum command depends on it
 
 # to install new version log in as root
 
