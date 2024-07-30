@@ -22,7 +22,7 @@ Object  everything that can exist in real time such as : car, human , jenkins , 
 Why are we creating objects? 
 
 === To group related functions (methods)    
-It is a concept where characteristic and functions of a real objcet is packages in a single entity in the code 
+It is a concept where characteristic and functions of a real object is packages in a single entity in the code 
 Writing your code in Blocks it is called Object programming
 
 === To create a template or blueprint
@@ -184,7 +184,7 @@ class person(object): #### use this syntax when creating a class as it will be u
 person2=person("Gino","Laino")  ## see output the object gets deleted
 
 # Destructor method will be call automatically and destroy the object so the difference between destructor method and del
-# is that with destructor Pythonc control the deletion with del you are controlling it
+# is that with destructor Python control the deletion with del you are controlling it
 
 ############################## INHERITANCE AND POLYMORPHISM ################################################
 
